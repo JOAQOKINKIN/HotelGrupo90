@@ -4,6 +4,10 @@
  */
 package hotelgrupo90.entidades;
 
+import java.util.Scanner;
+
+
+
 /**
  *
  * @author 4K
@@ -13,6 +17,7 @@ public class Habitacion {
     private int piso;
     private boolean estado;
     private TipoHabitacion tipo_habitacion;
+    
 
     public Habitacion() {
     }
@@ -28,6 +33,14 @@ public class Habitacion {
         this.piso = piso;
         this.estado = estado;
         this.tipo_habitacion = tipo_habitacion;
+    }
+
+    public Habitacion(Integer piso, Boolean estado, Integer categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Habitacion(Integer id, Integer piso, Boolean estado, Integer categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getIdHabitacion() {
@@ -61,11 +74,33 @@ public class Habitacion {
     public void setTipo_habitacion(TipoHabitacion tipo_habitacion) {
         this.tipo_habitacion = tipo_habitacion;
     }
+             public void cambiarPrecio(TipoHabitacion tdh){
+       Scanner sc = new Scanner(System.in);
+        System.out.println("El precio actual es de: " + tdh.getPrecio());
+        double precioNuevo =0;
+        System.out.println("Ingrese nuevo precio: " );
+        precioNuevo = sc.nextInt();
+        
+        tdh.setPrecio(precioNuevo);
+        
+        System.out.println("El nuevo precio es de " + tdh.getPrecio());
+    
+    }
 
     @Override
     public String toString() {
         return "Habitacion{" + "idHabitacion=" + idHabitacion + ", piso=" + piso + ", estado=" + estado + ", tipo_habitacion=" + tipo_habitacion + '}';
     }
+
+    public void setTipo_habitacion(Integer categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getCategoria() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+   
     
     
     

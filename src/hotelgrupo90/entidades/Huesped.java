@@ -10,6 +10,7 @@ package hotelgrupo90.entidades;
  */
 public class Huesped {
     private int idHuesped;
+    private String apellido;
     private String nombre;
     private int dni;
     private String domicilio;
@@ -18,9 +19,12 @@ public class Huesped {
 
     public Huesped() {
     }
+    
+    
 
-    public Huesped(int idHuesped, String nombre, int dni, String domicilio, String correo, int celular) {
+    public Huesped(int idHuesped,String apellido, String nombre, int dni, String domicilio, String correo, int celular) {
         this.idHuesped = idHuesped;
+        this.apellido = apellido; 
         this.nombre = nombre;
         this.dni = dni;
         this.domicilio = domicilio;
@@ -28,12 +32,21 @@ public class Huesped {
         this.celular = celular;
     }
 
-    public Huesped(String nombre, int dni, String domicilio, String correo, int celular) {
+    public Huesped(String apellido,String nombre, int dni, String domicilio, String correo, int celular) {
+        this.apellido = apellido; 
         this.nombre = nombre;
         this.dni = dni;
         this.domicilio = domicilio;
         this.correo = correo;
         this.celular = celular;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getIdHuesped() {

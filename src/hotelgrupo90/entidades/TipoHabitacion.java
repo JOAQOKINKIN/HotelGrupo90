@@ -4,6 +4,10 @@
  */
 package hotelgrupo90.entidades;
 
+import java.util.Scanner;
+
+
+
 /**
  *
  * @author 4K
@@ -15,16 +19,24 @@ public class TipoHabitacion {
     private int cantidadCamas;
     private double precio;
     private String tipoCamas;
+    
+    
 
     public TipoHabitacion() {
     }
 
-    public TipoHabitacion(int tipoDeHabitacion, int cantidadPersonas, int cantidadCamas, double precio, String tipoCamas) {
-        this.IDtipoDeHabitacion = tipoDeHabitacion;
+    public TipoHabitacion(int IDtipoDeHabitacion) {
+        this.IDtipoDeHabitacion = IDtipoDeHabitacion;
+    }
+    
+
+    public TipoHabitacion(int IDtipoDeHabitacion, int cantidadPersonas, int cantidadCamas, double precio, String tipoCamas) {
+        this.IDtipoDeHabitacion = IDtipoDeHabitacion;
         this.cantidadPersonas = cantidadPersonas;
         this.cantidadCamas = cantidadCamas;
         this.precio = precio;
         this.tipoCamas = tipoCamas;
+        
     }
 
     public TipoHabitacion(int cantidadPersonas, int cantidadCamas, double precio, String tipoCamas) {
@@ -32,7 +44,14 @@ public class TipoHabitacion {
         this.cantidadCamas = cantidadCamas;
         this.precio = precio;
         this.tipoCamas = tipoCamas;
+        
     }
+
+ 
+
+  
+
+   
 
     public int getIDtipoDeHabitacion() {
         return IDtipoDeHabitacion;
@@ -78,6 +97,21 @@ public class TipoHabitacion {
     public String toString() {
         return "TipoHabitacion{" + "IDtipoDeHabitacion=" + IDtipoDeHabitacion + ", cantidadPersonas=" + cantidadPersonas + ", cantidadCamas=" + cantidadCamas + ", precio=" + precio + ", tipoCamas=" + tipoCamas + '}';
     }
+    
+    public void cambiarPrecio(TipoHabitacion tdh){
+       Scanner sc = new Scanner(System.in);
+        System.out.println("El precio actual es de: " + tdh.getPrecio());
+        double precioNuevo =0;
+        System.out.println("Ingrese nuevo precio: " );
+        precioNuevo = sc.nextInt();
+        
+        tdh.setPrecio(precioNuevo);
+        
+        System.out.println("El nuevo precio es de " + tdh.getPrecio());
+    
+    }
+    
+    
     
     
     
